@@ -2,7 +2,7 @@ import test, { beforeEach, afterEach } from 'node:test';
 import assert from 'node:assert/strict';
 import chat from '../api/intake-chat.js';
 import submit from '../api/intake-submit.js';
-import { lead, transcript } from '../lib/intake.js';
+import { body, lead, transcript } from '../lib/intake.js';
 
 const originalFetch = globalThis.fetch;
 const originalEnv = { ...process.env };
@@ -105,4 +105,7 @@ test('oversized or invalid transcript is rejected', () => {
   assert.throws(() => transcript(Array.from({ length: 21 }, () => ({ role: 'user', content: 'hi' }))));
   assert.throws(() => transcript([{ role: 'user', content: 'x'.repeat(2001) }]));
   assert.equal(lead({ ...input, email: 'TEST@EXAMPLE.COM' }).email, 'test@example.com');
+  const longMessages = Array.from({ length: 20 }, () => ({ role: 'user', content: 'é'.repeat(2000) }));
+  assert.doesNotThrow(() => body(req({ ...input, messages: longMessages })));
+  assert.throws(() => body(req({ message: 'x'.repeat(200001) })));
 });
