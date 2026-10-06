@@ -1,5 +1,6 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
+import { foundingTitle, foundingDescription, foundingMarkup } from '../src/data/founding-client-offer.js';
 import { childServiceSlugs, getChildServiceData } from '../src/data/child-service-review-data.js';
 
 const BASE_URL = 'https://magneo.ca';
@@ -7,6 +8,7 @@ const DIST_DIR = 'dist';
 const INDEX_PATH = join(DIST_DIR, 'index.html');
 const SITEMAP_PATH = join(DIST_DIR, 'sitemap.xml');
 const EXTRA_PATHS = [
+  '/founding-clients/',
   '/personal-branding-ultimate-guide-legal-professionals/',
   '/about/adele-salikhova/',
   '/services/ai-seo/',
@@ -85,6 +87,7 @@ const descriptions = {
 };
 
 const titleOverrides = {
+  '/founding-clients/': foundingTitle,
   '/': 'Magneo | Marketing That Makes Your Expertise Clear',
   '/personal-branding-ultimate-guide-legal-professionals/': 'Personal Branding Guide for Legal Professionals | Magneo',
   '/about/': 'About Magneo | Marketing for Regulated Industries',
@@ -199,6 +202,7 @@ function titleFor(pathname) {
 }
 
 function descriptionFor(pathname) {
+  if (pathname === '/founding-clients/') return foundingDescription;
   if (descriptions[pathname]) return descriptions[pathname];
   const child = childServiceDataForPath(pathname);
   if (child) return child.metaDescription || child.description;
@@ -239,7 +243,7 @@ function injectSeo(html, { title, description, canonical, image, imageAlt, robot
     ...(image ? [`<meta property="og:image" content="${escapeHtml(image)}" />`, `<meta property="og:image:alt" content="${escapeHtml(imageAlt || '')}" />`, `<meta name="twitter:image" content="${escapeHtml(image)}" />`, `<meta name="twitter:image:alt" content="${escapeHtml(imageAlt || '')}" />`] : []),
     ...(schema ? [`<script type="application/ld+json" data-magneo-page-schema>${JSON.stringify(schema)}</script>`] : [])
   ].map((tag) => `    ${tag}`).join('\n');
-  return clean.replace(/(\s*<meta\s+name=["']viewport["'][^>]*>)/i, `$1\n${tags}`);
+  return clean.replace(/(\s*<meta\s+name=["']viewport["'][^>]*>)/i, (_match, viewport) => `${viewport}\n${tags}`);
 }
 
 function injectGuideStaticHtml(html) {
@@ -301,6 +305,7 @@ for (const pathname of paths) {
   const robots = NOINDEX_PATHS.includes(pathname) ? 'noindex, follow' : pathname === '/personal-branding-ultimate-guide-legal-professionals/' ? 'index, follow' : undefined;
   let html = injectSeo(indexHtml, { title: titleFor(pathname), description: descriptionFor(pathname), canonical, image, imageAlt, robots, schema });
   if (pathname === '/personal-branding-ultimate-guide-legal-professionals/') html = injectGuideStaticHtml(html);
+  if (pathname === '/founding-clients/') html = html.replace('<div id="root"></div>', `<div id="root"><main>${foundingMarkup}</main></div>`);
   const outputPath = pathname === '/' ? INDEX_PATH : join(DIST_DIR, pathname.replace(/^\//, ''), 'index.html');
   await mkdir(dirname(outputPath), { recursive: true });
   await writeFile(outputPath, html);

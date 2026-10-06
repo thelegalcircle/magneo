@@ -15,6 +15,7 @@ import ContactTest from './ContactTest.jsx';
 import HomeTest from './HomeTest.jsx';
 import SiteSearch from './SiteSearch.jsx';
 import { PrivacyPolicy, TermsOfUse } from './PolicyPages.jsx';
+import FoundingClients from './FoundingClients.jsx';
 import { LegalMarketingHub, LegalPracticePage, legalPracticeSlugs, legalPracticeSearchDescription } from './LegalMarketingPages.jsx';
 import { FinancialMarketingHub, FinancialSpecialistPage, financialSpecialistSlugs, financialSpecialistSearchDescription } from './FinancialMarketingPages.jsx';
 import { HealthcareMarketingHub, HealthcareSpecialistPage, healthcareSpecialistSlugs, healthcareSpecialistSearchDescription } from './HealthcareMarketingPages.jsx';
@@ -262,6 +263,7 @@ function Footer(){
 
 export default function App(){ return <Layout><ScrollTop/><Routes>
   <Route path="/" element={<HomeTest/>}/>
+  <Route path="/founding-clients/" element={<FoundingClients/>}/>
   <Route path="/services" element={<ServicesOverviewReview/>}/><Route path="/services/" element={<ServicesOverviewReview/>}/>
   <Route path="/services/directory" element={<ServicesDirectoryReview/>}/><Route path="/services/directory/" element={<ServicesDirectoryReview/>}/>
   <Route path="/services/ai-powered-digital-marketing" element={<ServiceContentReview serviceSlugOverride="ai-powered-digital-marketing"/>}/><Route path="/services/ai-powered-digital-marketing/" element={<ServiceContentReview serviceSlugOverride="ai-powered-digital-marketing"/>}/>
