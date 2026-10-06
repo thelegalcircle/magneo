@@ -52,7 +52,7 @@
   }
 
   function loadPermittedTools() {
-    if (!choices || !onBlog) return;
+    if (!choices) return;
     if (choices.analytics) {
       window.dataLayer = window.dataLayer || [];
       window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
@@ -62,9 +62,15 @@
         ad_user_data: choices.marketing ? 'granted' : 'denied',
         ad_personalization: choices.marketing ? 'granted' : 'denied'
       });
-      loadScript('magneo-consented-gtm', 'https://www.googletagmanager.com/gtm.js?id=GTM-N5CMG47S');
+      if (onBlog) {
+        loadScript('magneo-consented-gtm', 'https://www.googletagmanager.com/gtm.js?id=GTM-N5CMG47S');
+      } else if (!document.getElementById('magneo-consented-ga4')) {
+        window.gtag('js', new Date());
+        window.gtag('config', 'G-R6LHHX00NR');
+        loadScript('magneo-consented-ga4', 'https://www.googletagmanager.com/gtag/js?id=G-R6LHHX00NR');
+      }
     }
-    if (choices.marketing) loadScript('magneo-consented-hubspot', 'https://js-na3.hs-scripts.com/342767601.js?integration=WordPress');
+    if (onBlog && choices.marketing) loadScript('magneo-consented-hubspot', 'https://js-na3.hs-scripts.com/342767601.js?integration=WordPress');
   }
 
   function make(tag, attrs, text) {
@@ -113,7 +119,7 @@
     essential.appendChild(make('strong', {}, 'Essential — always active'));
     essential.appendChild(make('p', {}, 'Keeps core website, form and preference functions available.'));
     panel.appendChild(essential);
-    [['analytics','Analytics','Google Analytics helps us understand visits to the blog.'],['marketing','Marketing','HubSpot tracking helps us understand visits and follow-up across the blog.']].forEach(function (row) {
+    [['analytics','Analytics','Google Analytics helps us understand visits to Magneo’s websites.'],['marketing','Marketing','HubSpot tracking helps us understand visits and follow-up across the blog.']].forEach(function (row) {
       var wrap = make('div', { class: 'magneo-cookie-category' });
       var toggle = make('button', { type: 'button', role: 'switch', 'aria-checked': String(draft[row[0]]), 'aria-label': row[1] + ' cookies', class: 'magneo-cookie-switch' }, row[1] + ': ' + (draft[row[0]] ? 'On' : 'Off'));
       toggle.addEventListener('click', function () { draft[row[0]] = !draft[row[0]]; toggle.setAttribute('aria-checked', String(draft[row[0]])); toggle.textContent = row[1] + ': ' + (draft[row[0]] ? 'On' : 'Off'); });
