@@ -25,12 +25,12 @@ function usePolicySeo(title, description, path) {
   }, [title, description, path]);
 }
 
-function PolicyHeader({ eyebrow, title, intro }) {
+function PolicyHeader({ eyebrow, title, intro, effectiveDate = EFFECTIVE_DATE }) {
   return <header className="policy-hero"><div className="container policy-hero-inner">
     <div className="label">{eyebrow}</div>
     <h1>{title}</h1>
     <p>{intro}</p>
-    <span>Effective date: {EFFECTIVE_DATE}</span>
+    <span>Effective date: {effectiveDate}</span>
   </div></header>;
 }
 
@@ -44,7 +44,7 @@ function PolicyLayout({ children }) {
 export function PrivacyPolicy() {
   usePolicySeo('Privacy Policy', 'How Magneo collects, uses, shares, and protects information across magneo.ca and blog.magneo.ca.', '/privacy-policy/');
   return <>
-    <PolicyHeader eyebrow="Privacy" title="Privacy Policy" intro="This policy explains how Magneo handles information when you visit our websites, contact us, request a resource, or work with us."/>
+    <PolicyHeader eyebrow="Privacy" title="Privacy Policy" effectiveDate="October 6, 2026" intro="This policy explains how Magneo handles information when you visit our websites, contact us, request a resource, or work with us."/>
     <PolicyLayout>
       <section><h2>Scope</h2><p>This policy applies to <a href="https://magneo.ca/">magneo.ca</a>, <a href="https://blog.magneo.ca/blog/">blog.magneo.ca</a>, and the forms, pages, and services made available through them. Magneo is responsible for the information it controls.</p></section>
 
@@ -55,6 +55,8 @@ export function PrivacyPolicy() {
       <section><h2>How we use information</h2><ul><li>Respond to enquiries and arrange conversations.</li><li>Deliver requested guides and other resources.</li><li>Prepare proposals, provide services, and manage client relationships.</li><li>Operate, secure, troubleshoot, and improve the websites.</li><li>Understand aggregate website and search usage.</li><li>Meet legal, accounting, and regulatory obligations, and protect our rights.</li></ul><p>Submitting an enquiry does not subscribe you to optional marketing. Where marketing consent is requested, it is presented separately and can be withdrawn.</p></section>
 
       <section><h2>Service providers and disclosures</h2><p>Information may be processed by providers that help operate the websites and business, including HubSpot for forms and customer-relationship management, Vercel for main-site hosting and server functions, the WordPress hosting and security environment for the blog, and analytics or tag-management providers where enabled. These providers process information under their own infrastructure and contractual terms and may operate outside Canada.</p><p>We may also disclose information when required by law, to protect people or property, in connection with professional advisers, or as part of a business transaction. We do not sell personal information.</p></section>
+
+      <section><h2>AI intake chat</h2><p>When enabled, our intake assistant uses OpenAI to process the messages you send and generate replies. It identifies itself as AI and can take an enquiry while our team is offline. Please share business information only, and do not include passwords, payment details, confidential case information, or sensitive personal information.</p><p>Chat messages remain in your browser's memory until you reload the page. When you choose to send an enquiry and agree to follow-up, your contact details, request and conversation are sent to our inbox through Resend and stored with the enquiry in HubSpot. This does not subscribe you to marketing. OpenAI requests are configured not to store responses for later retrieval through its API; provider retention remains subject to the applicable service terms.</p><p>Cloudflare Turnstile checks requests for abuse when you open the chat. Upstash stores short-lived hashed IP rate-limit keys and delivery markers containing a request hash, contact record ID and delivery status. Rate-limit keys expire after one minute; delivery markers expire after seven days. The delivery markers do not contain your contact details or conversation. These providers may process information outside Canada.</p></section>
 
       <section><h2>Retention</h2><p>Retention depends on the purpose and the system involved. Enquiry and CRM records are kept while we respond, manage a prospective or active relationship, maintain necessary business records, and meet legal requirements. Hosting, security, analytics, and form providers retain technical records according to the applicable account configuration and their service terms. Information is deleted or anonymized when it is no longer reasonably required, subject to backups, legal holds, and record-keeping obligations.</p></section>
 

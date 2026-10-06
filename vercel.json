@@ -1,4 +1,8 @@
 {
+  "functions": {
+    "api/intake-chat.js": { "maxDuration": 60 },
+    "api/intake-submit.js": { "maxDuration": 180 }
+  },
   "routes": [
     {
       "src": "/services/compliance-aware-ai-workflows/?",
