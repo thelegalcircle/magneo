@@ -32,7 +32,7 @@
     <div class="content">
       <div id="conversation" role="log" aria-live="polite" aria-label="Conversation"></div>
       <form id="lead" hidden>
-        <p class="notice">Leave your details for a human follow-up, even when the team is offline. Your inquiry and chat will be sent to Magneo by email and saved in HubSpot.</p>
+        <p class="notice">Leave your details for a human follow-up, even when the team is offline. Your inquiry and chat will be sent to Magneo by email.</p>
         <label class="field">Name<input name="name" autocomplete="name" maxlength="100" required></label>
         <label class="field">Email<input name="email" type="email" autocomplete="email" maxlength="254" required></label>
         <label class="field">Phone (optional)<input name="phone" type="tel" autocomplete="tel" maxlength="40"></label>

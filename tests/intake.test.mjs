@@ -13,7 +13,7 @@ function response(data, status = 200) { return new Response(JSON.stringify(data)
 function req(data = input, method = 'POST', origin = 'https://magneo.ca') { return { method, body: data, headers: { origin, 'x-vercel-forwarded-for': '192.0.2.10' } }; }
 function res() { return { code: 0, data: null, headers: {}, setHeader(key, value) { this.headers[key] = value; }, status(value) { this.code = value; return this; }, json(value) { this.data = value; return this; } }; }
 beforeEach(() => {
-  Object.assign(process.env, { INTAKE_ENABLED: 'true', OPENAI_API_KEY: 'mock', HUBSPOT_PRIVATE_APP_TOKEN: 'mock', RESEND_API_KEY: 'mock', INTAKE_EMAIL_FROM: 'mock@sender.example', INTAKE_EMAIL_TO: 'owner@example.com', TURNSTILE_SITE_KEY: 'mock', TURNSTILE_SECRET_KEY: 'mock', UPSTASH_REDIS_REST_URL: 'https://redis.example', UPSTASH_REDIS_REST_TOKEN: 'mock' });
+  Object.assign(process.env, { INTAKE_ENABLED: 'true', OPENAI_API_KEY: 'mock', RESEND_API_KEY: 'mock', INTAKE_EMAIL_FROM: 'mock@sender.example', INTAKE_EMAIL_TO: 'owner@example.com', TURNSTILE_SITE_KEY: 'mock', TURNSTILE_SECRET_KEY: 'mock', UPSTASH_REDIS_REST_URL: 'https://redis.example', UPSTASH_REDIS_REST_TOKEN: 'mock' });
   calls = []; database = new Map(); failure = ''; existingContact = false; bot = true; busyLock = false;
   globalThis.fetch = async (url, options = {}) => {
     const payload = options.body ? JSON.parse(options.body) : null;
@@ -71,29 +71,18 @@ test('AI request is bounded, uses server credentials and disables response stora
   const sent = calls.find(call => call.url.includes('openai')); assert.equal(sent.payload.store, false); assert.equal(sent.payload.max_output_tokens, 300); assert.equal(sent.payload.input.length, 1);
   assert.match(sent.payload.instructions, /Do not claim to have sent/); assert.equal(result.data.key, undefined);
 });
-test('inquiry creates contact, associated escaped note and email with reply-to', async () => {
-  const result = res(); await submit(submission({ message: '<script>bad</script>' }), result); assert.equal(result.code, 200);
-  const saved = calls.find(call => call.url.endsWith('/contacts') && call.options.method === 'POST'); assert.equal(saved.payload.properties.email, input.email);
-  const note = calls.find(call => call.url.endsWith('/notes')); assert.match(note.payload.properties.hs_note_body, /&lt;script&gt;/); assert.equal(note.payload.associations[0].to.id, '42'); assert.equal(note.payload.associations[0].types[0].associationTypeId, 202);
-  const email = calls.find(call => call.url.includes('resend')); assert.equal(email.payload.reply_to, input.email); assert.equal(email.options.headers['Idempotency-Key'], `magneo-intake-${id}`);
+test('inquiry sends only email with reply-to and no CRM credential', async () => {
+  delete process.env.HUBSPOT_PRIVATE_APP_TOKEN;
+  const result = res(); await submit(submission(), result); assert.equal(result.code, 200);
+  assert.equal(calls.some(call => call.url.includes('hubapi')), false);
+  const email = calls.find(call => call.url.includes('resend')); assert.equal(email.payload.reply_to, input.email); assert.equal(email.payload.to[0], 'owner@example.com'); assert.equal(email.options.headers['Idempotency-Key'], `magneo-intake-${id}`);
   const state = database.get(`magneo:intake:${id}`); assert.equal(state.includes(input.email), false); assert.equal(state.includes(input.message), false);
 });
-test('existing contact is reused without overwriting CRM fields', async () => {
-  existingContact = true; const result = res(); await submit(submission(), result); assert.equal(result.code, 200);
-  assert.equal(calls.some(call => call.url.endsWith('/contacts') && call.options.method === 'POST'), false);
-  assert.equal(calls.some(call => call.options.method === 'PATCH'), false);
-});
-test('email failure does not confirm success; retry skips completed HubSpot steps', async () => {
+
+test('email failure remains retryable and completed delivery is not repeated', async () => {
   failure = 'email'; const first = res(); await submit(submission(), first); assert.equal(first.code, 503);
   failure = ''; const retry = res(); await submit(submission(), retry); assert.equal(retry.code, 200);
-  assert.equal(calls.filter(call => call.url.endsWith('/notes')).length, 1);
-  assert.equal(calls.filter(call => call.url.endsWith('/contacts') && call.options.method === 'POST').length, 1);
   const duplicate = res(); await submit(submission(), duplicate); assert.equal(duplicate.code, 200); assert.equal(calls.filter(call => call.url.includes('resend')).length, 2);
-});
-test('note failure remains retryable without repeating contact creation', async () => {
-  failure = 'note'; const first = res(); await submit(submission(), first); assert.equal(first.code, 503); assert.equal(calls.some(call => call.url.includes('resend')), false);
-  failure = ''; const retry = res(); await submit(submission(), retry); assert.equal(retry.code, 200);
-  assert.equal(calls.filter(call => call.url.endsWith('/contacts') && call.options.method === 'POST').length, 1);
 });
 test('concurrent requests cannot deliver the same inquiry simultaneously', async () => {
   busyLock = true; const result = res(); await submit(submission(), result); assert.equal(result.code, 409); assert.equal(calls.some(call => call.url.includes('hubapi')), false);
