@@ -8,7 +8,7 @@ const DIST_DIR = 'dist';
 const INDEX_PATH = join(DIST_DIR, 'index.html');
 const SITEMAP_PATH = join(DIST_DIR, 'sitemap.xml');
 const EXTRA_PATHS = [
-  '/new-clients/',
+  '/new-clients-offer/',
   '/personal-branding-ultimate-guide-legal-professionals/',
   '/about/adele-salikhova/',
   '/services/ai-seo/',
@@ -87,7 +87,7 @@ const descriptions = {
 };
 
 const titleOverrides = {
-  '/new-clients/': foundingTitle,
+  '/new-clients-offer/': foundingTitle,
   '/': 'Magneo | Marketing That Makes Your Expertise Clear',
   '/personal-branding-ultimate-guide-legal-professionals/': 'Personal Branding Guide for Legal Professionals | Magneo',
   '/about/': 'About Magneo | Marketing for Regulated Industries',
@@ -153,7 +153,7 @@ const titleOverrides = {
 };
 
 const imageOverrides = {
-  '/new-clients/': '/portfolio/websites/new-client-desktop.webp',
+  '/new-clients-offer/': '/portfolio/websites/new-client-desktop.webp',
   '/about/': '/adele-salikhova.jpg',
   '/about/adele-salikhova/': '/adele-salikhova.jpg',
   '/personal-branding-ultimate-guide-legal-professionals/': '/adele-salikhova.jpg',
@@ -173,7 +173,7 @@ const imageOverrides = {
 };
 
 const imageAltOverrides = {
-  '/new-clients/': 'Illustrative Magneo personal injury website design concept',
+  '/new-clients-offer/': 'Illustrative Magneo personal injury website design concept',
   '/about/': 'Adele Salikhova, founder of Magneo.',
   '/about/adele-salikhova/': 'Adele Salikhova, founder of Magneo.',
   '/personal-branding-ultimate-guide-legal-professionals/': 'Magneo personal branding guide for lawyers and legal professionals.',
@@ -204,7 +204,7 @@ function titleFor(pathname) {
 }
 
 function descriptionFor(pathname) {
-  if (pathname === '/new-clients/') return foundingDescription;
+  if (pathname === '/new-clients-offer/') return foundingDescription;
   if (descriptions[pathname]) return descriptions[pathname];
   const child = childServiceDataForPath(pathname);
   if (child) return child.metaDescription || child.description;
@@ -307,7 +307,7 @@ for (const pathname of paths) {
   const robots = NOINDEX_PATHS.includes(pathname) ? 'noindex, follow' : pathname === '/personal-branding-ultimate-guide-legal-professionals/' ? 'index, follow' : undefined;
   let html = injectSeo(indexHtml, { title: titleFor(pathname), description: descriptionFor(pathname), canonical, image, imageAlt, robots, schema });
   if (pathname === '/personal-branding-ultimate-guide-legal-professionals/') html = injectGuideStaticHtml(html);
-  if (pathname === '/new-clients/') html = html.replace('<div id="root"></div>', `<div id="root"><main>${foundingMarkup}</main></div>`);
+  if (pathname === '/new-clients-offer/') html = html.replace('<div id="root"></div>', `<div id="root"><main>${foundingMarkup}</main></div>`);
   const outputPath = pathname === '/' ? INDEX_PATH : join(DIST_DIR, pathname.replace(/^\//, ''), 'index.html');
   await mkdir(dirname(outputPath), { recursive: true });
   await writeFile(outputPath, html);
