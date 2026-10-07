@@ -263,7 +263,8 @@ function Footer(){
 
 export default function App(){ return <Layout><ScrollTop/><Routes>
   <Route path="/" element={<HomeTest/>}/>
-  <Route path="/founding-clients/" element={<FoundingClients/>}/>
+  <Route path="/new-clients/" element={<FoundingClients/>}/>
+  <Route path="/founding-clients/" element={<Navigate to="/new-clients/" replace/>}/>
   <Route path="/services" element={<ServicesOverviewReview/>}/><Route path="/services/" element={<ServicesOverviewReview/>}/>
   <Route path="/services/directory" element={<ServicesDirectoryReview/>}/><Route path="/services/directory/" element={<ServicesDirectoryReview/>}/>
   <Route path="/services/ai-powered-digital-marketing" element={<ServiceContentReview serviceSlugOverride="ai-powered-digital-marketing"/>}/><Route path="/services/ai-powered-digital-marketing/" element={<ServiceContentReview serviceSlugOverride="ai-powered-digital-marketing"/>}/>

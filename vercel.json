@@ -1,5 +1,6 @@
 {
   "routes": [
+    { "src": "/founding-clients/?", "status": 301, "headers": { "Location": "/new-clients/" } },
     {
       "src": "/services/compliance-aware-ai-workflows/?",
       "status": 301,
