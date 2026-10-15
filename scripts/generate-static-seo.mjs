@@ -2,6 +2,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { foundingTitle, foundingDescription, foundingMarkup } from '../src/data/founding-client-offer.js';
 import { childServiceSlugs, getChildServiceData } from '../src/data/child-service-review-data.js';
+import { referralTitle, referralDescription, referralMarkup } from '../src/data/referrals-review.js';
 
 const BASE_URL = 'https://magneo.ca';
 const DIST_DIR = 'dist';
@@ -19,6 +20,7 @@ const EXTRA_PATHS = [
   ...childServiceSlugs.map((slug) => `/services/${slug}/`)
 ];
 const NOINDEX_PATHS = [
+  '/test/referrals/',
   '/portfolio/legal-websites/',
   '/our-team/',
   '/about/adele-salikhova/'
@@ -197,6 +199,7 @@ function titleCase(pathname) {
 }
 
 function titleFor(pathname) {
+  if (pathname === '/test/referrals/') return referralTitle;
   if (titleOverrides[pathname]) return titleOverrides[pathname];
   const child = childServiceDataForPath(pathname);
   if (child) return child.seoTitle || `${child.title} | Magneo`;
@@ -204,6 +207,7 @@ function titleFor(pathname) {
 }
 
 function descriptionFor(pathname) {
+  if (pathname === '/test/referrals/') return referralDescription;
   if (pathname === '/new-clients-offer/') return foundingDescription;
   if (descriptions[pathname]) return descriptions[pathname];
   const child = childServiceDataForPath(pathname);
@@ -308,6 +312,10 @@ for (const pathname of paths) {
   let html = injectSeo(indexHtml, { title: titleFor(pathname), description: descriptionFor(pathname), canonical, image, imageAlt, robots, schema });
   if (pathname === '/personal-branding-ultimate-guide-legal-professionals/') html = injectGuideStaticHtml(html);
   if (pathname === '/new-clients-offer/') html = html.replace('<div id="root"></div>', `<div id="root"><main>${foundingMarkup}</main></div>`);
+  if (pathname === '/test/referrals/') {
+    html = html.replaceAll('https://magneo.ca/test/referrals/', 'https://magneo.ca/test/referrals');
+    html = html.replace('<div id="root"></div>', `<div id="root"><main>${referralMarkup}</main></div>`);
+  }
   const outputPath = pathname === '/' ? INDEX_PATH : join(DIST_DIR, pathname.replace(/^\//, ''), 'index.html');
   await mkdir(dirname(outputPath), { recursive: true });
   await writeFile(outputPath, html);

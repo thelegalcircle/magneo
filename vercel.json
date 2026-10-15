@@ -1,5 +1,6 @@
 {
   "routes": [
+    { "src": "/test/referrals/?", "dest": "/test/referrals/index.html", "headers": { "X-Robots-Tag": "noindex, follow" } },
     { "src": "/founding-clients/?", "status": 301, "headers": { "Location": "/new-clients-offer/" } },
     { "src": "/new-clients/?", "status": 301, "headers": { "Location": "/new-clients-offer/" } },
     {

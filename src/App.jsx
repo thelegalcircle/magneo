@@ -1,5 +1,6 @@
 import { Link, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+import ReferralsReview from './ReferralsReview.jsx';
 import PersonalInjuryBoldTest from './PersonalInjuryBoldTest.jsx';
 import LitigationEditorialTest from './LitigationEditorialTest.jsx';
 import BrainInjury3DTest from './BrainInjury3DTest.jsx';
@@ -262,6 +263,7 @@ function Footer(){
 }
 
 export default function App(){ return <Layout><ScrollTop/><Routes>
+  <Route path="/test/referrals" element={<ReferralsReview/>}/>
   <Route path="/" element={<HomeTest/>}/>
   <Route path="/new-clients-offer/" element={<FoundingClients/>}/>
   <Route path="/new-clients/" element={<Navigate to="/new-clients-offer/" replace/>}/>
