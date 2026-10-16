@@ -13,12 +13,21 @@ function plainText(value = '') {
 }
 
 export default async function handler(request, response) {
+  response.setHeader('X-Content-Type-Options', 'nosniff');
+  if (!['GET', 'HEAD'].includes(request.method)) {
+    response.setHeader('Allow', 'GET, HEAD');
+    return response.status(405).end();
+  }
   try {
-    const upstream = await fetch(BLOG_API, { headers: { Accept: 'application/json' } });
+    const upstream = await fetch(BLOG_API, { headers: { Accept: 'application/json' }, signal: AbortSignal.timeout(8000) });
     if (!upstream.ok) throw new Error(`Blog API returned ${upstream.status}`);
     const posts = await upstream.json();
+    if (!Array.isArray(posts)) throw new Error('Unexpected blog response');
     const results = posts
-      .filter((post) => post.status === 'publish' && post.link)
+      .filter((post) => {
+        try { return post.status === 'publish' && new URL(post.link).origin === 'https://blog.magneo.ca'; }
+        catch { return false; }
+      })
       .map((post) => ({
         title: plainText(post.title?.rendered),
         description: plainText(post.excerpt?.rendered).slice(0, 220),
