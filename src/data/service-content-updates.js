@@ -1,6 +1,6 @@
 const shared = [
   ['Keyword research and competitor analysis', 'Your SEO strategy starts with research into relevant searches, customer questions and competing websites, identifying opportunities for your business.'],
-  ['Keyword mapping and topic planning', 'Your semantic core—a structured collection of relevant keywords and topics—is mapped to existing and planned pages. Each priority page receives a clear search focus, with gaps and overlapping content identified.'],
+  ['Keyword mapping and topic planning', 'Your semantic core - a structured collection of relevant keywords and topics - is mapped to existing and planned pages. Each priority page receives a clear search focus, with gaps and overlapping content identified.'],
   ['Page titles, meta descriptions and headings', 'Each priority page receives tailored title tags, meta descriptions and headings that clearly communicate its subject. URL improvements are included where needed.'],
   ['Technical SEO, robots.txt and XML sitemaps', 'Magneo reviews crawl settings, indexing instructions and XML sitemaps, and implements fixes for broken links, redirect issues, duplicate content and incorrect canonical tags.'],
   ['Internal linking and website structure', 'Your related services, profiles and resources are connected through relevant internal links, making information easier to find and your website’s structure clearer.'],
@@ -57,7 +57,7 @@ const techSocial = {
     scopeEyebrow: 'SOCIAL MEDIA STRATEGY', scopeHeading: 'Your social content, planned and managed.',
     included: [
       ['Audience research and platform selection', 'Magneo researches your audience’s questions, interests and challenges, alongside the conversations happening in your niche. Your platform plan reflects where those audiences are active, including X, YouTube and other relevant channels.'],
-      ['Topics, hooks and your brand voice', 'Successful posts and videos in your niche inform a content plan built around your product and perspective. You receive proposed topics, opening hooks and formats—from product updates and educational threads to founder videos—ready to discuss before production.'],
+      ['Topics, hooks and your brand voice', 'Successful posts and videos in your niche inform a content plan built around your product and perspective. You receive proposed topics, opening hooks and formats - from product updates and educational threads to founder videos - ready to discuss before production.'],
       ['Content creation and approval', 'Magneo creates your posts, graphics and supporting copy in a consistent brand voice. Your team reviews the content for product accuracy and provides feedback before final revisions and scheduling.'],
       ['Publishing and ongoing improvement', 'Approved content is published across your selected platforms. Engagement, audience questions and content performance help shape the next calendar, with room for timely updates and launches.'],
     ],
@@ -79,15 +79,15 @@ export function applyServiceContentUpdates(slug, original) {
     const included = shared.map(item => [...item]);
     if (slug.includes('legal-industry')) {
       included[0][1] = 'Your SEO strategy starts with research into legal services, prospective clients’ questions, location searches and competing law firm websites, identifying opportunities for your firm.';
-      included[1][1] = 'Your semantic core—a structured collection of relevant keywords and topics—is mapped to practice-area pages, location pages and legal articles. Each priority page receives a clear search focus, with gaps and overlapping content identified.';
+      included[1][1] = 'Your semantic core - a structured collection of relevant keywords and topics - is mapped to practice-area pages, location pages and legal articles. Each priority page receives a clear search focus, with gaps and overlapping content identified.';
       included[4][1] = 'Your practice areas, lawyer profiles and legal articles are connected through relevant internal links, making information easier to find and your website’s structure clearer.';
     } else if (slug.includes('financial-advisors')) {
       included[0][1] = 'Your SEO strategy starts with research into financial services, client needs, location searches and competing websites, identifying opportunities for your firm.';
-      included[1][1] = 'Your semantic core—a structured collection of relevant keywords and topics—is mapped to service pages and educational articles. Each priority page receives a clear search focus, with gaps and overlapping content identified.';
+      included[1][1] = 'Your semantic core - a structured collection of relevant keywords and topics - is mapped to service pages and educational articles. Each priority page receives a clear search focus, with gaps and overlapping content identified.';
       included[4][1] = 'Your services, advisor profiles and educational resources are connected through relevant internal links, making information easier to find and your website’s structure clearer.';
     } else if (slug.includes('healthcare')) {
       included[0][1] = 'Your SEO strategy starts with research into patient searches and professional buyers researching MedTech products and applications, alongside relevant questions and competing websites.';
-      included[1][1] = 'Your semantic core—a structured collection of relevant keywords and topics—is mapped to service, location, product and educational pages. Each priority page receives a clear search focus, with gaps and overlapping content identified.';
+      included[1][1] = 'Your semantic core - a structured collection of relevant keywords and topics - is mapped to service, location, product and educational pages. Each priority page receives a clear search focus, with gaps and overlapping content identified.';
       included[4][1] = 'Your services, practitioner profiles, product pages and educational resources are connected through relevant internal links, making information easier to find and your website’s structure clearer.';
       included[5][1] = 'Eligible clinics and healthcare providers’ business profiles, location pages and listings are optimised to help patients find accurate service, location and contact information.';
       included[7][1] = 'Magneo sets up or refines Google Search Console, analytics and appropriate booking and demo-request tracking so you can understand how organic visitors find and interact with your website. Tracking reflects privacy and consent requirements, with sensitive patient information kept out of analytics tools.';

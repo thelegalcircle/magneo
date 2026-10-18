@@ -265,7 +265,7 @@ const pageData = {
       ['Can existing content be improved instead of creating more articles?', 'Yes. Existing pages may benefit from clearer service information, updated content, or better internal connections before additional articles are needed.'],
       ['How are results assessed?', 'Reporting distinguishes visibility and visits from enquiries. Whether an enquiry becomes a suitable client depends on the firm’s intake and engagement process.'],
     ],
-    cta: ['Is your search content attracting interest in the advice you offer?', 'Share your website, priority services, and intended client audience. The next conversation can focus on where the current content supports—or misses—that fit.'],
+    cta: ['Is your search content attracting interest in the advice you offer?', 'Share your website, priority services, and intended client audience. The next conversation can focus on where the current content supports - or misses - that fit.'],
     ctaButton: ['Discuss your firm’s SEO', '/contact/#contact-enquiry'],
     resourcesAfterCta: true,
     relatedIndustries: [['Financial firms', '/financial-firm-marketing/']],
@@ -397,7 +397,7 @@ const pageData = {
     ],
     faq: [
       ['Which social platforms should my business use?', 'Channel selection depends on your audience, goals, and ability to maintain useful content. The plan identifies a manageable focus rather than requiring a presence on every platform.'],
-      ['How much of my time will this require?', 'For most experts, no more than two hours a week—for sharing insights, reviewing drafts, and approving content. Magneo handles the planning and production, with any additional time needed for initial setup agreed in advance.'],
+      ['How much of my time will this require?', 'For most experts, no more than two hours a week - for sharing insights, reviewing drafts, and approving content. Magneo handles the planning and production, with any additional time needed for initial setup agreed in advance.'],
       ['Do I need to appear on camera?', 'It depends on the format. For expert-led video, we strongly recommend appearing on camera yourself so your audience can get to know your voice, perspective, and personality. Text posts, graphics, and carousels can complement video or provide a starting point if you’re not ready to film.'],
       ['Can you write in my professional voice?', 'Yes. A custom GPT configured around your expertise, writing samples, and preferences can help develop and maintain your brand voice. If you’re starting from scratch, Magneo can shape that voice with you, then refine the content through editing and your feedback.'],
       ['Who approves and publishes the content?', 'Your designated reviewer approves business-specific information and any required internal checks. Publishing is handled by your business or by Magneo where scheduling is included.'],
@@ -593,7 +593,7 @@ const pageData = {
     faq: [
       ['How is personal branding different from social media management?','Personal branding defines your positioning, message, and voice. Social media management handles ongoing content and publishing. They can be combined, but are scoped separately.'],
       ['What do you need from me?','We need your background, areas of expertise, goals, and examples of how you communicate. Interviews and feedback help the work reflect your actual perspective.'],
-      ['Do I need to appear on video?',<>Yes—appearing on camera is a core part of the expert-led personal-branding approach recommended by Magneo. Potential clients should be able to see you, hear your perspective, and get a sense of how you explain your work.<br/><br/>You do not need to arrive with polished presentation skills. Topic planning, scripts, and recording guidance help you prepare, while editing shapes the finished video. Written content and visuals support your presence alongside video.</>],
+      ['Do I need to appear on video?',<>Yes - appearing on camera is a core part of the expert-led personal-branding approach recommended by Magneo. Potential clients should be able to see you, hear your perspective, and get a sense of how you explain your work.<br/><br/>You do not need to arrive with polished presentation skills. Topic planning, scripts, and recording guidance help you prepare, while editing shapes the finished video. Written content and visuals support your presence alongside video.</>],
       ['What if I am not comfortable on camera?','Start with short, guided recordings about subjects you know well. An interview-style conversation can feel more natural than delivering a prepared speech. The format and pace can develop as your confidence grows.'],
       ['Can you write in my professional voice?','Yes. Your writing, interviews, and feedback help establish how you communicate. Brand-voice guidance captures your tone, terminology, and perspective, and a custom GPT can support drafting from that foundation. Editing and review keep the finished content aligned with what you actually think and want to say.'],
       ['How much of my time will this require?','For most experts, the ongoing content process is designed to require no more than two hours a week for sharing ideas, recording, and reviewing material. Initial positioning work or a larger recording session may require additional time, agreed in advance.'],

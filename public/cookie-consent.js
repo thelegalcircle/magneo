@@ -116,7 +116,7 @@
     panel.appendChild(make('h2', { id: 'magneo-cookie-title' }, 'Manage cookie preferences'));
     panel.appendChild(make('p', {}, 'Choose which optional tools may run on Magneo’s websites. You can change your choice at any time.'));
     var essential = make('div', { class: 'magneo-cookie-category' });
-    essential.appendChild(make('strong', {}, 'Essential — always active'));
+    essential.appendChild(make('strong', {}, 'Essential - always active'));
     essential.appendChild(make('p', {}, 'Keeps core website, form and preference functions available.'));
     panel.appendChild(essential);
     [['analytics','Analytics','Google Analytics helps us understand visits to Magneo’s websites.'],['marketing','Marketing','HubSpot tracking helps us understand visits and follow-up across the blog.']].forEach(function (row) {

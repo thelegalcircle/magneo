@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 const chapters = [
   ['01', 'The moment', 'An ordinary day becomes a dividing line. The first legal step is preserving what happened before details disappear.'],
-  ['02', 'The disruption', 'Pain, appointments, missed work, and a family reorganizing itself. The claim must reflect the whole change—not only the diagnosis.'],
+  ['02', 'The disruption', 'Pain, appointments, missed work, and a family reorganizing itself. The claim must reflect the whole change - not only the diagnosis.'],
   ['03', 'The proof', 'Records become a timeline. Specialists explain the future. The scattered pieces become a case another person can understand.'],
   ['04', 'The next chapter', 'A resolution cannot undo the event. It can create room for care, stability, choice, and a life rebuilt on new terms.'],
 ];
@@ -16,7 +16,7 @@ export default function TestLawyer5(){
   const [motionPaused, setMotionPaused] = useState(false);
 
   useEffect(() => {
-    document.title = 'Fielding North Injury Law — Cinematic PI Concept';
+    document.title = 'Fielding North Injury Law - Cinematic PI Concept';
     let description = document.querySelector('meta[name="description"]');
     if (!description) { description = document.createElement('meta'); description.name = 'description'; document.head.appendChild(description); }
     description.content = 'A fictional cinematic personal-injury law-firm landing-page concept created by Magneo.';
@@ -61,7 +61,7 @@ export default function TestLawyer5(){
         <a className="fn5-scroll" href="#fn5-story"><span>Scroll through the story</span><i/></a>
       </section>
 
-      <section className="fn5-opening"><div><span>Before / After</span><h2>Every serious injury<br/>creates two timelines.</h2></div><p>There is the life that was planned—and the life that now needs support. Fielding North is a fictional injury firm built around the distance between those two realities.</p></section>
+      <section className="fn5-opening"><div><span>Before / After</span><h2>Every serious injury<br/>creates two timelines.</h2></div><p>There is the life that was planned - and the life that now needs support. Fielding North is a fictional injury firm built around the distance between those two realities.</p></section>
 
       <section className="fn5-story" id="fn5-story">
         <div className="fn5-story-visual">

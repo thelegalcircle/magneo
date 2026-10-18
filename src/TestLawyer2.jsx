@@ -8,7 +8,7 @@ const cases = [
 ];
 
 const steps = [
-  ['01', 'Tell us what happened', 'A confidential conversation with a member of the legal team—not a call centre.'],
+  ['01', 'Tell us what happened', 'A confidential conversation with a member of the legal team - not a call centre.'],
   ['02', 'Get a clear case plan', 'We explain deadlines, evidence, benefits, fees, and the next best action in plain language.'],
   ['03', 'Focus on your recovery', 'We manage insurers, records, experts, negotiations, and litigation while keeping you informed.'],
 ];
@@ -19,7 +19,7 @@ export default function TestLawyer2(){
   const [sent, setSent] = useState(false);
 
   useEffect(() => {
-    document.title = 'Arden Vale Injury Law — Modern PI Lawyer Concept';
+    document.title = 'Arden Vale Injury Law - Modern PI Lawyer Concept';
     let description = document.querySelector('meta[name="description"]');
     if (!description) { description = document.createElement('meta'); description.name = 'description'; document.head.appendChild(description); }
     description.content = 'A fictional, modern personal injury lawyer landing page concept created by Magneo.';
@@ -45,7 +45,7 @@ export default function TestLawyer2(){
         <div className="av2-hero-copy">
           <div className="av2-status"><i/> Now accepting select serious-injury files</div>
           <h1>Your recovery<br/>deserves<br/><em>leverage.</em></h1>
-          <p>Serious injuries change everything. We bring calm, clarity, and determined advocacy to your claim—starting with one confidential conversation.</p>
+          <p>Serious injuries change everything. We bring calm, clarity, and determined advocacy to your claim - starting with one confidential conversation.</p>
           <div className="av2-hero-actions"><a href="#av2-consult">Tell us what happened <Mark/></a><a href="#av2-process">See how it works ↓</a></div>
         </div>
         <div className="av2-portrait">
@@ -68,7 +68,7 @@ export default function TestLawyer2(){
 
       <section className="av2-lawyer" id="av2-lawyer">
         <div className="av2-lawyer-photo"><img src="/pi-lawyer-hero-generated.png" alt="Maya Arden, fictional lead counsel"/><span>CALM IN THE ROOM.<br/>RELENTLESS ON THE FILE.</span></div>
-        <div className="av2-lawyer-copy"><span className="av2-label">02 / Your lawyer</span><blockquote>“You should never feel like a file number—especially when your future is on the line.”</blockquote><p>Our fictional founding lawyer, Maya Arden, created Arden Vale around a simple idea: excellent advocacy should feel clear, human, and relentlessly prepared.</p><div className="av2-mini-proof"><div><b>1:1</b><span>Lawyer-led strategy</span></div><div><b>15 min</b><span>Daytime response target</span></div></div></div>
+        <div className="av2-lawyer-copy"><span className="av2-label">02 / Your lawyer</span><blockquote>“You should never feel like a file number - especially when your future is on the line.”</blockquote><p>Our fictional founding lawyer, Maya Arden, created Arden Vale around a simple idea: excellent advocacy should feel clear, human, and relentlessly prepared.</p><div className="av2-mini-proof"><div><b>1:1</b><span>Lawyer-led strategy</span></div><div><b>15 min</b><span>Daytime response target</span></div></div></div>
       </section>
 
       <section className="av2-process" id="av2-process">
