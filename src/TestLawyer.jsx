@@ -8,7 +8,7 @@ const practiceAreas = [
 ];
 
 const steps = [
-  ['01', 'Tell us what happened', 'A confidential conversation with a member of the legal team—not a call centre.'],
+  ['01', 'Tell us what happened', 'A confidential conversation with a member of the legal team - not a call centre.'],
   ['02', 'Get a clear case plan', 'We explain deadlines, evidence, benefits, fees, and the next best action in plain language.'],
   ['03', 'Focus on your recovery', 'We manage insurers, records, experts, negotiations, and litigation while keeping you informed.'],
 ];
@@ -46,7 +46,7 @@ export default function TestLawyer(){
         <div className="al-hero-copy">
           <div className="al-eyebrow"><span/> Toronto personal injury counsel · Available 24/7</div>
           <h1>Your recovery<br/>deserves <em>leverage.</em></h1>
-          <p className="al-lead">Serious injuries change everything. We bring calm, clarity, and determined advocacy to your claim—starting with one confidential conversation.</p>
+          <p className="al-lead">Serious injuries change everything. We bring calm, clarity, and determined advocacy to your claim - starting with one confidential conversation.</p>
           <div className="al-actions"><a className="al-btn" href="#consultation">Tell us what happened <Arrow/></a><a className="al-text-link" href="tel:+14378731155">Call now: 437 873 1155</a></div>
           <div className="al-assurance"><span><b>No fee</b> unless we recover*</span><span><b>Free</b> case assessment</span><span><b>Direct</b> lawyer access</span></div>
         </div>
@@ -67,7 +67,7 @@ export default function TestLawyer(){
       </section>
 
       <section className="al-story" id="lawyer">
-        <div className="al-story-quote"><span className="al-kicker">Why Arden Vale</span><blockquote>“You should never feel like a file number—especially when your future is on the line.”</blockquote><p>Our fictional founding lawyer, Maya Arden, created Arden Vale around a simple idea: excellent advocacy should feel clear, human, and relentlessly prepared.</p><a className="al-light-link" href="#consultation">Meet Maya <Arrow/></a></div>
+        <div className="al-story-quote"><span className="al-kicker">Why Arden Vale</span><blockquote>“You should never feel like a file number - especially when your future is on the line.”</blockquote><p>Our fictional founding lawyer, Maya Arden, created Arden Vale around a simple idea: excellent advocacy should feel clear, human, and relentlessly prepared.</p><a className="al-light-link" href="#consultation">Meet Maya <Arrow/></a></div>
         <div className="al-story-panel"><small>Our promise</small><h3>Clarity at every turn.</h3><ul><li><span>01</span>Plain-language advice and honest risk assessment</li><li><span>02</span>A documented plan for evidence, treatment, and deadlines</li><li><span>03</span>Proactive updates before you need to ask</li><li><span>04</span>Settlement decisions stay in your hands</li></ul></div>
       </section>
 

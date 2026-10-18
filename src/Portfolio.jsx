@@ -55,7 +55,7 @@ function PreviewGallery({items, className, title, summary, offset=0, cta, id}){
 
 export default function Portfolio(){
   useEffect(()=>{
-    document.title='Portfolio | Magneo — Web, Social & AI Marketing';
+    document.title='Portfolio | Magneo - Web, Social & AI Marketing';
     let description=document.querySelector('meta[name="description"]');
     if(!description){description=document.createElement('meta');description.name='description';document.head.appendChild(description);}
     description.content='Explore Magneo website concepts, social media creative, and AI-powered marketing ideas for businesses in regulated industries.';
@@ -99,7 +99,7 @@ export default function Portfolio(){
 
     <section className="pf-discipline pf-social" id="social-media">
       <div className="container pf-social-grid">
-        <div className="pf-social-copy"><span>02 / Social media marketing</span><h2>Share your expertise.<br/>Give people a reason to <em>follow.</em></h2><p>We turn your expertise and your audience’s questions into LinkedIn posts, short videos, and recurring content series—with a clear message and a consistent voice.</p><div className="pf-capabilities"><span>Content strategy</span><span>LinkedIn</span><span>Short-form video</span><span>Personal branding</span></div><Link to="/services/social-media-linkedin-marketing-for-regulated-industries/">Explore social media marketing ↗</Link></div>
+        <div className="pf-social-copy"><span>02 / Social media marketing</span><h2>Share your expertise.<br/>Give people a reason to <em>follow.</em></h2><p>We turn your expertise and your audience’s questions into LinkedIn posts, short videos, and recurring content series - with a clear message and a consistent voice.</p><div className="pf-capabilities"><span>Content strategy</span><span>LinkedIn</span><span>Short-form video</span><span>Personal branding</span></div><Link to="/services/social-media-linkedin-marketing-for-regulated-industries/">Explore social media marketing ↗</Link></div>
         <div className="pf-social-board" aria-label="Illustrative social content series">
           <article className="pf-post pf-post-one"><small>Client questions / 01</small><b>Answer what people<br/>want to know.</b><i>↗</i></article>
           <article className="pf-post pf-post-two"><small>Your perspective</small><b>Explain what you think.<br/>Show why it matters.</b><div><i/><i/><i/><i/></div></article>

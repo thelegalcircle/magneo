@@ -22,7 +22,7 @@ export default function PersonalInjuryFamilyTest(){
   const selected = needs.find((item) => item.key === activeNeed) || needs[0];
 
   useEffect(() => {
-    document.title = 'Harbour & Lane Injury Law — Family-Focused PI Concept Preview';
+    document.title = 'Harbour & Lane Injury Law - Family-Focused PI Concept Preview';
     let description = document.querySelector('meta[name="description"]');
     if (!description) { description = document.createElement('meta'); description.name = 'description'; document.head.appendChild(description); }
     description.content = 'A fictional, family-focused personal-injury law-firm website concept created by Magneo.';
@@ -111,7 +111,7 @@ export default function PersonalInjuryFamilyTest(){
 
       <section className="hl6-contact" id="hl6-contact">
         <div className="hl6-contact-copy"><span>Initial enquiry</span><h2>Tell us what<br/>life looks like now.</h2><p>You can enquire for yourself or someone close to you. Start with a general outline and any known deadline; you do not need every document ready.</p><small>Fictional concept · Toronto, Ontario</small></div>
-        <div className="hl6-form-card">{sent ? <div className="hl6-success" role="status"><span>Demonstration only</span><h3>This is a portfolio demonstration.</h3><p>Your information has not been sent or retained.</p><button type="button" onClick={()=>setSent(false)}>Return to form</button></div> : <form onSubmit={(event)=>{event.preventDefault();setSent(true)}}><div><span>Your name</span><input aria-label="Your name" required autoComplete="name"/></div><div><span>Phone or email</span><input aria-label="Phone or email" required/></div><div><span>Short outline — optional</span><small className="hl6-field-help">Please do not include medical records or confidential details.</small><textarea aria-label="Short outline" rows="4"/></div><label><input type="checkbox" required/><span>I understand this message does not create a lawyer-client relationship.</span></label><button type="submit">Request a conversation <Arrow/></button><small>Demonstration form only. Do not enter personal or confidential information. No enquiry will be sent.</small></form>}</div>
+        <div className="hl6-form-card">{sent ? <div className="hl6-success" role="status"><span>Demonstration only</span><h3>This is a portfolio demonstration.</h3><p>Your information has not been sent or retained.</p><button type="button" onClick={()=>setSent(false)}>Return to form</button></div> : <form onSubmit={(event)=>{event.preventDefault();setSent(true)}}><div><span>Your name</span><input aria-label="Your name" required autoComplete="name"/></div><div><span>Phone or email</span><input aria-label="Phone or email" required/></div><div><span>Short outline - optional</span><small className="hl6-field-help">Please do not include medical records or confidential details.</small><textarea aria-label="Short outline" rows="4"/></div><label><input type="checkbox" required/><span>I understand this message does not create a lawyer-client relationship.</span></label><button type="submit">Request a conversation <Arrow/></button><small>Demonstration form only. Do not enter personal or confidential information. No enquiry will be sent.</small></form>}</div>
       </section>
     </main>
 

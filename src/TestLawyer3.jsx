@@ -4,7 +4,7 @@ const capabilities = [
   ['01', 'Commercial disputes', 'Contract breaches, partnership conflicts, shareholder remedies, and urgent business disputes.'],
   ['02', 'Injunctions & emergency relief', 'Rapid strategy where assets, evidence, reputation, or business continuity are at risk.'],
   ['03', 'Regulatory investigations', 'Clear counsel through enforcement, professional discipline, and complex regulatory proceedings.'],
-  ['04', 'Appeals & judicial review', 'Focused written and oral advocacy when the record—and the standard of review—matters most.'],
+  ['04', 'Appeals & judicial review', 'Focused written and oral advocacy when the record - and the standard of review - matters most.'],
 ];
 
 function Arrow(){ return <span aria-hidden="true">↗</span>; }
@@ -15,7 +15,7 @@ export default function TestLawyer3(){
   const [heroSent, setHeroSent] = useState(false);
 
   useEffect(() => {
-    document.title = 'Ashcroft Rowe Litigation — 3D Legal Concept';
+    document.title = 'Ashcroft Rowe Litigation - 3D Legal Concept';
     let description = document.querySelector('meta[name="description"]');
     if (!description) { description = document.createElement('meta'); description.name = 'description'; document.head.appendChild(description); }
     description.content = 'A fictional, modern litigation law-firm landing-page concept created by Magneo.';

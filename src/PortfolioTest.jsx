@@ -50,7 +50,7 @@ export default function PortfolioTest(){
   const [showAllWebsites,setShowAllWebsites]=useState(false);
 
   useEffect(()=>{
-    document.title='Portfolio | Magneo — Web, Social & AI Marketing';
+    document.title='Portfolio | Magneo - Web, Social & AI Marketing';
     let description=document.querySelector('meta[name="description"]');
     if(!description){description=document.createElement('meta');description.name='description';document.head.appendChild(description);}
     description.content='Explore Magneo website concepts, social media creative, and AI marketing demonstrations for regulated industries.';
@@ -89,7 +89,7 @@ export default function PortfolioTest(){
     <section className="pf-web-info" id="portfolio-websites" aria-labelledby="portfolio-websites-title">
       <div className="container pf-web-info-grid">
         <div><span>Portfolio | Websites</span><h2 id="portfolio-websites-title">Distinctive design.<br/><em>A clear next step.</em></h2></div>
-        <div><p>Explore website concepts that bring design, copy, and development together—helping visitors understand the business, explore its services, and get in touch.</p><Link to="/services/website-design-for-regulated-professional-industries-magneo/">Explore website development ↗</Link></div>
+        <div><p>Explore website concepts that bring design, copy, and development together - helping visitors understand the business, explore its services, and get in touch.</p><Link to="/services/website-design-for-regulated-professional-industries-magneo/">Explore website development ↗</Link></div>
       </div>
     </section>
 
@@ -115,7 +115,7 @@ export default function PortfolioTest(){
     <section className="pft-social-story">
       <div className="container pft-social-story-grid">
         <div className="pft-social-story-image"><video controls playsInline preload="metadata" poster="/portfolio/social/immersive-scenario-reel-cover.jpg" aria-label="Play the immersive scenario reel"><source src="/portfolio/social/immersive-scenario-reel.mp4" type="video/mp4"/>Your browser does not support embedded video.</video></div>
-        <div><span>Content in context</span><h2>One idea. Different ways to tell it.</h2><p>A useful question can become a post, a carousel, or a short video—each shaped for the format while keeping a consistent message and visual style.</p></div>
+        <div><span>Content in context</span><h2>One idea. Different ways to tell it.</h2><p>A useful question can become a post, a carousel, or a short video - each shaped for the format while keeping a consistent message and visual style.</p></div>
       </div>
     </section>
 

@@ -36,7 +36,7 @@ function PolicyHeader({ eyebrow, title, intro }) {
 
 function PolicyLayout({ children }) {
   return <div className="policy-page"><main className="policy-main"><div className="container policy-grid">
-    <aside aria-label="Policy contact information"><strong>Magneo</strong><span>Toronto, ON — serving Canada and the USA</span><a href="mailto:contact@magneo.ca">contact@magneo.ca</a><a href="tel:+14378731155">437 873 1155</a></aside>
+    <aside aria-label="Policy contact information"><strong>Magneo</strong><span>Toronto, ON - serving Canada and the USA</span><a href="mailto:contact@magneo.ca">contact@magneo.ca</a><a href="tel:+14378731155">437 873 1155</a></aside>
     <article>{children}</article>
   </div></main></div>;
 }

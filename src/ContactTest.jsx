@@ -106,7 +106,7 @@ export default function ContactTest() {
 
           {status === 'success' ? <div className="ct-result" role="status" tabIndex="-1">
             <span aria-hidden="true">✓</span>
-            <h3>Thanks—your enquiry has been sent to Magneo.</h3>
+            <h3>Thanks - your enquiry has been sent to Magneo.</h3>
             <p>We’ll review your message and reply by email.</p>
           </div> : <form className="ct-form" id="contact-form" onSubmit={submit}>
             <label>Your name <span aria-hidden="true">*</span><input name="name" value={values.name} onChange={update} autoComplete="name" required/></label>

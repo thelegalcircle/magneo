@@ -1,4 +1,4 @@
-export const foundingTitle = 'Law Firm Website Rebuild — CAD $1,800 | Magneo';
+export const foundingTitle = 'Law Firm Website Rebuild - CAD $1,800 | Magneo';
 export const foundingDescription = 'A focused website rebuild for Ontario law firms. CAD $1,800 total, up to six pages, ready for review in five business days once materials are received.';
 const email = 'mailto:contact@magneo.ca?subject=New%20Client%20Website%20Rebuild';
 const cta = `<a class="btn" href="${email}">Discuss your website rebuild <span aria-hidden="true">↗</span></a>`;

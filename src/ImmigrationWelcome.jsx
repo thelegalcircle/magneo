@@ -27,7 +27,7 @@ export default function ImmigrationWelcome(){
   const [demoMessage, setDemoMessage] = useState(false);
 
   useEffect(() => {
-    document.title = 'Maple & Harbour Immigration Law — Fictional Website Concept';
+    document.title = 'Maple & Harbour Immigration Law - Fictional Website Concept';
     let description = document.querySelector('meta[name="description"]');
     if (!description) { description = document.createElement('meta'); description.name = 'description'; document.head.appendChild(description); }
     description.content = 'A warm, welcoming fictional Canadian immigration-law website concept created by Magneo.';
@@ -130,14 +130,14 @@ export default function ImmigrationWelcome(){
             <label>Your name<input name="name" type="text" autoComplete="name" required/></label>
             <label>Email<input name="email" type="email" autoComplete="email" required/></label>
           </div>
-          <label>Phone — optional<input name="phone" type="tel" autoComplete="tel"/></label>
+          <label>Phone - optional<input name="phone" type="tel" autoComplete="tel"/></label>
           <label>What would you like help with?
             <select name="help" defaultValue="" required>
               <option value="" disabled>Select an option</option>
               <option>Joining family</option><option>Working in Canada</option><option>Studying in Canada</option><option>Permanent residence</option><option>Not sure yet</option>
             </select>
           </label>
-          <label>Short outline — optional<small>Please do not include passport numbers, identification numbers, or confidential documents.</small><textarea name="outline" rows="4"/></label>
+          <label>Short outline - optional<small>Please do not include passport numbers, identification numbers, or confidential documents.</small><textarea name="outline" rows="4"/></label>
           <label className="mh7-ack"><input type="checkbox" required/><span>Sending an enquiry does not create a lawyer-client relationship.</span></label>
           <button type="submit">Request a conversation <Arrow/></button>
           {demoMessage && <p className="mh7-demo-message" role="status">This is a portfolio demonstration. Your enquiry has not been sent.</p>}

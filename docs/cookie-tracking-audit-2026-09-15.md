@@ -1,4 +1,4 @@
-# Magneo cookie and tracking audit — 15 September 2026
+# Magneo cookie and tracking audit - 15 September 2026
 
 Scope: `magneo.ca` and `blog.magneo.ca`. This records observed code and anonymous public HTML, not an assertion that a provider's account-side retention settings have been reviewed.
 

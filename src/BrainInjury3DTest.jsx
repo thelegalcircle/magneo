@@ -27,7 +27,7 @@ export default function BrainInjury3DTest(){
   const [modelPlaying, setModelPlaying] = useState(false);
 
   useEffect(() => {
-    document.title = 'Northline Brain Injury Law — Fictional Website Concept';
+    document.title = 'Northline Brain Injury Law - Fictional Website Concept';
     let description = document.querySelector('meta[name="description"]');
     if (!description) { description = document.createElement('meta'); description.name = 'description'; document.head.appendChild(description); }
     description.content = 'A fictional brain injury law-firm website concept created by Magneo.';
@@ -100,7 +100,7 @@ export default function BrainInjury3DTest(){
 
       <section className="nl4-contact" id="nl4-contact">
         <div className="nl4-contact-copy"><span>Initial enquiry</span><h2>Tell us how<br/>we can help.</h2><p>A general outline is enough to start. You can enquire for yourself or someone close to you.</p></div>
-        <form onSubmit={(event)=>{event.preventDefault();setSent(true)}}>{sent ? <div className="nl4-success" role="status"><b>✓</b><h3>This is a demonstration.</h3><p>Your information has not been sent or retained.</p><button type="button" onClick={()=>setSent(false)}>Back to form</button></div> : <><label><span>Your name</span><input required autoComplete="name"/></label><label><span>Phone or email</span><input required/></label><label><span>Short outline — optional</span><small className="nl4-field-help">Please do not include medical records or confidential details.</small><textarea rows="5"/></label><label className="nl4-check"><input type="checkbox" required/><span>I understand this form does not create a lawyer-client relationship.</span></label><button type="submit">Request a conversation <Arrow/></button><small>Demonstration form only. Do not enter personal or confidential information. No enquiry will be sent.</small></>}</form>
+        <form onSubmit={(event)=>{event.preventDefault();setSent(true)}}>{sent ? <div className="nl4-success" role="status"><b>✓</b><h3>This is a demonstration.</h3><p>Your information has not been sent or retained.</p><button type="button" onClick={()=>setSent(false)}>Back to form</button></div> : <><label><span>Your name</span><input required autoComplete="name"/></label><label><span>Phone or email</span><input required/></label><label><span>Short outline - optional</span><small className="nl4-field-help">Please do not include medical records or confidential details.</small><textarea rows="5"/></label><label className="nl4-check"><input type="checkbox" required/><span>I understand this form does not create a lawyer-client relationship.</span></label><button type="submit">Request a conversation <Arrow/></button><small>Demonstration form only. Do not enter personal or confidential information. No enquiry will be sent.</small></>}</form>
       </section>
     </main>
     <footer className="nl4-footer"><div className="nl4-logo"><i>N</i><span>NORTHLINE<small>BRAIN INJURY LAW</small></span></div><p>Fictional law-firm concept and illustrative 3D imagery created for Magneo. Northline and Elena North are fictional. This page does not offer legal services, and its form does not send or retain information.</p><a href="#nl4-top">Back to top ↑</a></footer>

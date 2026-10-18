@@ -6,7 +6,8 @@ function plainText(value = '') {
     .replace(/&nbsp;/g, ' ')
     .replace(/&amp;/g, '&')
     .replace(/&#8217;|&rsquo;/g, '’')
-    .replace(/&#8211;|&ndash;/g, '–')
+    .replace(/&#8211;|&ndash;/g, '-')
+    .replace(/\u2013|\u2014|&mdash;|&#8212;|&#x201[34];/gi, '-')
     .replace(/&#038;/g, '&')
     .replace(/\s+/g, ' ')
     .trim();

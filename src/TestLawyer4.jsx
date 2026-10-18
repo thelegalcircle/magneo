@@ -19,7 +19,7 @@ export default function TestLawyer4(){
   const [sent, setSent] = useState(false);
   const [modelPaused, setModelPaused] = useState(false);
   useEffect(() => {
-    document.title = 'Northline Brain Injury Law — Fictional PI Concept';
+    document.title = 'Northline Brain Injury Law - Fictional PI Concept';
     let description = document.querySelector('meta[name="description"]');
     if (!description) { description = document.createElement('meta'); description.name = 'description'; document.head.appendChild(description); }
     description.content = 'A fictional award-style serious brain injury law-firm landing-page concept created by Magneo.';
@@ -45,7 +45,7 @@ export default function TestLawyer4(){
         <div className="nl4-hero-copy">
           <span className="nl4-eyebrow">Serious brain injury counsel · Toronto</span>
           <h1>A brain injury<br/>changes<br/><em>the map.</em></h1>
-          <p>When the injury is complex and the future is uncertain, your legal team must see the whole person—not only the diagnosis.</p>
+          <p>When the injury is complex and the future is uncertain, your legal team must see the whole person - not only the diagnosis.</p>
           <div className="nl4-actions"><a href="#nl4-contact">Tell us what changed <Arrow/></a><a href="tel:+14378731155">Call 437 873 1155</a></div>
         </div>
         <div className={`nl4-visual${modelPaused ? ' is-paused' : ''}`} aria-label="Animated head-only 3D portrait representing serious head pain">

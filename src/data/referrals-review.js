@@ -1,5 +1,5 @@
 // MAGNEO-only review content. No AIgenist configuration or submission integration.
-export const referralTitle = 'Refer & Earn | MAGNEO — Review';
+export const referralTitle = 'Refer & Earn | MAGNEO - Review';
 export const referralDescription = 'Introduce a law firm to MAGNEO for a website or ongoing marketing support. Review referral rewards, eligibility and terms.';
 export const referralPath = '/test/referrals';
 export const referralTerms = [

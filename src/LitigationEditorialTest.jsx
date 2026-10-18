@@ -23,7 +23,7 @@ export default function LitigationEditorialTest(){
   const [sent, setSent] = useState(false);
 
   useEffect(() => {
-    document.title = 'Ashcroft Rowe Litigation — Editorial Concept Preview';
+    document.title = 'Ashcroft Rowe Litigation - Editorial Concept Preview';
     let description = document.querySelector('meta[name="description"]');
     if (!description) { description = document.createElement('meta'); description.name = 'description'; document.head.appendChild(description); }
     description.content = 'A fictional editorial litigation law-firm website concept created by Magneo.';
@@ -59,7 +59,7 @@ export default function LitigationEditorialTest(){
               <h2>Tell us<br/><em>what happened.</em></h2>
               <div className="lt3-hero-fields"><label><span>Your name</span><input required autoComplete="name"/></label><label><span>Email or phone</span><input required/></label></div>
               <label><span>What kind of dispute?</span><select defaultValue="" required><option value="" disabled>Select one</option><option>Business, contract, or shareholder dispute</option><option>Urgent injunction or court relief</option><option>Regulatory investigation or professional discipline</option><option>Appeal or judicial review</option><option>Not sure / other dispute</option></select></label>
-              <label><span>Short outline — optional</span><small className="lt3-field-help">A general description is enough. Please do not include confidential documents or detailed evidence.</small><textarea rows="2"/></label>
+              <label><span>Short outline - optional</span><small className="lt3-field-help">A general description is enough. Please do not include confidential documents or detailed evidence.</small><textarea rows="2"/></label>
               <button type="submit">Request a call <Arrow/></button>
               <small>Demonstration form only. Do not enter personal or confidential information. No enquiry will be sent.</small>
             </>}
@@ -82,7 +82,7 @@ export default function LitigationEditorialTest(){
 
       <section className="lt3-brief" id="lt3-method">
         <div className="lt3-brief-title"><span>Section 02 · Our approach</span><h2>Understand the stakes.<br/><em>Choose the next move.</em></h2></div>
-        <div className="lt3-columns"><p>Before choosing a legal step, we need to understand what you want to protect: your business, finances, reputation, or ability to move forward. We review the available information and explain where your position is strong—and where it is exposed.</p><p>We consider negotiation, mediation, and court proceedings against your priorities, likely costs, and timing. As the matter develops, we explain the options and seek your instructions on key decisions.</p><blockquote>A clear strategy explains the risks as well as the options.</blockquote></div>
+        <div className="lt3-columns"><p>Before choosing a legal step, we need to understand what you want to protect: your business, finances, reputation, or ability to move forward. We review the available information and explain where your position is strong - and where it is exposed.</p><p>We consider negotiation, mediation, and court proceedings against your priorities, likely costs, and timing. As the matter develops, we explain the options and seek your instructions on key decisions.</p><blockquote>A clear strategy explains the risks as well as the options.</blockquote></div>
         <div className="lt3-rules"><article><b>01</b><h3>Assess</h3><p>Understand the dispute, identify deadlines, and clarify the outcome you want to pursue.</p></article><article><b>02</b><h3>Plan</h3><p>Compare the available routes, discuss costs, and agree on the scope of the next stage.</p></article><article><b>03</b><h3>Act</h3><p>Carry out the agreed strategy, explain material developments, and revisit the plan when circumstances change.</p></article></div>
       </section>
 
@@ -101,7 +101,7 @@ export default function LitigationEditorialTest(){
         <div><span>Initial enquiry</span><h2>Let’s discuss<br/>your next step.</h2><p>Start with a brief, general outline and any known deadline. The first step is to check whether we can assist, including whether there is a conflict of interest, before arranging a further discussion.</p></div>
         <form onSubmit={(e)=>{e.preventDefault();setSent(true)}}>
           {sent ? <DemoSuccess onReset={()=>setSent(false)}/> : <>
-            <label><span>Your name</span><input required autoComplete="name"/></label><label><span>Email or phone</span><input required/></label><label><span>Organization — optional</span><input/></label><label><span>Short outline — optional</span><small className="lt3-field-help">Please do not include confidential documents or detailed evidence.</small><textarea rows="5"/></label><label className="lt3-check"><input type="checkbox" required/><span>I understand that this message does not create a lawyer-client relationship.</span></label><button type="submit">Request a call <Arrow/></button><small>Demonstration form only. Do not enter personal or confidential information. No enquiry will be sent.</small>
+            <label><span>Your name</span><input required autoComplete="name"/></label><label><span>Email or phone</span><input required/></label><label><span>Organization - optional</span><input/></label><label><span>Short outline - optional</span><small className="lt3-field-help">Please do not include confidential documents or detailed evidence.</small><textarea rows="5"/></label><label className="lt3-check"><input type="checkbox" required/><span>I understand that this message does not create a lawyer-client relationship.</span></label><button type="submit">Request a call <Arrow/></button><small>Demonstration form only. Do not enter personal or confidential information. No enquiry will be sent.</small>
           </>}
         </form>
       </section>
