@@ -308,7 +308,7 @@ for (const pathname of paths) {
       founder: { '@type': 'Person', name: 'Adele Salikhova' }
     }
   } : undefined;
-  const robots = NOINDEX_PATHS.includes(pathname) ? 'noindex, follow' : pathname === '/personal-branding-ultimate-guide-legal-professionals/' ? 'index, follow' : undefined;
+  const robots = pathname === '/test/referrals/' ? 'noindex, nofollow' : NOINDEX_PATHS.includes(pathname) ? 'noindex, follow' : pathname === '/personal-branding-ultimate-guide-legal-professionals/' ? 'index, follow' : undefined;
   let html = injectSeo(indexHtml, { title: titleFor(pathname), description: descriptionFor(pathname), canonical, image, imageAlt, robots, schema });
   if (pathname === '/personal-branding-ultimate-guide-legal-professionals/') html = injectGuideStaticHtml(html);
   if (pathname === '/new-clients-offer/') html = html.replace('<div id="root"></div>', `<div id="root"><main>${foundingMarkup}</main></div>`);

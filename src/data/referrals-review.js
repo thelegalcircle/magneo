@@ -1,10 +1,11 @@
-// MAGNEO-only review content. No AIgenist configuration or submission integration.
+// MAGNEO review content. Shared program conditions adapted from AIgenist;
+// the supplied MAGNEO form is configured separately in ReferralsReview.jsx.
 export const referralTitle = 'Refer & Earn | MAGNEO - Review';
 export const referralDescription = 'Introduce a law firm to MAGNEO for websites, AI video content or ongoing marketing support. Review referral rewards, eligibility and terms.';
 export const referralPath = '/test/referrals';
 export const referralTerms = [
   'Website and marketing rewards are one-time payments. The AI video production reward applies only to the referred client’s first video project and is not a recurring commission on subsequent projects or orders.',
-  'Only genuinely new leads qualify. Current clients, past clients, and firms previously in conversation with MAGNEO do not qualify.',
+  'Only genuinely new leads qualify. Previous leads, current clients, past clients, repeat clients, and firms previously in conversation with MAGNEO do not qualify.',
   'Anyone may refer, including existing clients. Referring your own business does not qualify.',
   'The referred client must sign within six months of the referral being received.',
   'The referrer or prospective client may report the referral by form, email, or direct message. The introduction must be confirmed by both parties before payout.',
@@ -50,6 +51,7 @@ export const referralMarkup = `<div class="mg-referrals">
     <div class="mg-ref-form-panel"><h2>Who should we meet?</h2><p>Tell us about the firm you’d like to introduce.</p><div class="mg-ref-preview-notice"><strong>Review page only - form setup under review.</strong> Terms and permission confirmations are pending in HubSpot. This connected form sends submissions to MAGNEO.</div><div id="magneo-referral-form" class="mg-ref-hubspot" aria-label="MAGNEO referral form"><p role="status">Loading referral form...</p></div><p class="mg-ref-form-fallback">If the form does not load, <a href="https://share-na3.hsforms.com/1dhvSEGjRQpm18IqbSiRv0w5o2p69" target="_blank" rel="noopener noreferrer">open the referral form in a new tab ↗</a>.</p><p class="mg-ref-privacy"><a href="/privacy-policy/">Privacy Policy</a></p></div>
   </div></section>
   <section class="mg-ref-terms" id="referral-terms" aria-label="Referral terms and eligibility"><div class="container"><details><summary><span>Referral Program Terms</span><span class="mg-ref-summary-action" aria-hidden="true"><span class="mg-ref-show">View terms</span><span class="mg-ref-hide">Hide terms</span><b>+</b></span></summary>
+    <p>These conditions apply to introductions of law firms seeking MAGNEO’s website, marketing or AI video services. One qualifying reward is available per new client across MAGNEO and AIgenist.</p>
     <ol>${referralTerms.map(term=>`<li>${term}</li>`).join('')}</ol>
     <p class="mg-ref-clarification">This program rewards introductions of law firms seeking marketing services. It does not concern referrals of legal clients or legal matters.</p>
   </details></div></section>
