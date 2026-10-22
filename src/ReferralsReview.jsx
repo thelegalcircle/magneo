@@ -84,7 +84,7 @@ export default function ReferralsReview() {
     const saved = [];
     for (const [selector, attribute, value] of [
       ['meta[name="description"]', 'content', referralDescription],
-      ['meta[name="robots"]', 'content', 'noindex, follow'],
+      ['meta[name="robots"]', 'content', 'noindex, nofollow'],
       ['link[rel="canonical"]', 'href', `https://magneo.ca${referralPath}`]
     ]) {
       let node = document.querySelector(selector);
