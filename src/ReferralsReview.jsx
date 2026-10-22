@@ -4,6 +4,31 @@ import './styles/referrals-review.css';
 
 export default function ReferralsReview() {
   useEffect(() => {
+    const openTerms = () => {
+      if (window.location.hash !== '#referral-terms') return;
+      const disclosure = document.querySelector('.mg-referrals .mg-ref-terms details');
+      if (disclosure) disclosure.open = true;
+    };
+    const handleTermsLink = (event) => {
+      if (!event.target.closest('[data-ref-terms]')) return;
+      const disclosure = document.querySelector('.mg-referrals .mg-ref-terms details');
+      if (disclosure) {
+        event.preventDefault();
+        disclosure.open = true;
+        window.history.replaceState(window.history.state, '', '#referral-terms');
+        document.getElementById('referral-terms').scrollIntoView();
+        disclosure.querySelector('summary').focus({ preventScroll: true });
+      }
+    };
+    openTerms();
+    document.addEventListener('click', handleTermsLink);
+    window.addEventListener('hashchange', openTerms);
+    return () => {
+      document.removeEventListener('click', handleTermsLink);
+      window.removeEventListener('hashchange', openTerms);
+    };
+  }, []);
+  useEffect(() => {
     const previousTitle = document.title;
     document.title = referralTitle;
     const saved = [];

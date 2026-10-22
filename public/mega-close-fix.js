@@ -49,6 +49,8 @@
 
   function shouldLoadNormally(link, url) {
     if (!url || url.origin !== window.location.origin) return false;
+    // Let the review page handle its own form and accessible terms anchors.
+    if (link.closest('.mg-referrals') && url.pathname === window.location.pathname && url.search === window.location.search && url.hash) return false;
     if (link.hasAttribute('download')) return false;
     if ((link.getAttribute('target') || '').toLowerCase() === '_blank') return false;
     if (url.pathname === window.location.pathname && url.search === window.location.search && url.hash === window.location.hash) return false;
